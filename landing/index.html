@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>kagent — I help you troubleshoot Kubernetes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Sora:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="atmosphere" aria-hidden="true">
+      <div class="grid-drift"></div>
+      <div class="glow glow-a"></div>
+      <div class="glow glow-b"></div>
+    </div>
+
+    <main class="hero">
+      <p class="brand">kagent</p>
+      <h1 class="headline">I am kagent — your cluster troubleshooter.</h1>
+      <p class="support">
+        Talk to me in plain English. I route your ask to diagnose or fix
+        specialists and help you understand what broke.
+      </p>
+      <div class="cta-row">
+        <a
+          class="cta"
+          id="open-supervisor"
+          href="http://localhost:8089/agents/kagent/supervisor-agent/chat"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Chat with me
+        </a>
+        <p class="hint">
+          Keep kagent UI port-forward on <code>8089</code> first.
+        </p>
+      </div>
+    </main>
+
+    <aside class="visual" aria-hidden="true">
+      <div class="panel">
+        <div class="panel-top">
+          <span></span><span></span><span></span>
+        </div>
+        <pre class="panel-body">
+<span class="dim">you ›</span> what’s wrong with hello in demo?
+<span class="ok">kagent ›</span> Routed to: diagnose-agent
+<span class="dim">         ImagePullBackOff — bad image tag</span>
+<span class="dim">you ›</span> fix it with nginx:1.27
+<span class="ok">kagent ›</span> Routed to: fixer-agent
+<span class="dim">         patch applied — pod 1/1 Running</span>
+        </pre>
+      </div>
+    </aside>
+
+    <script src="./config.js"></script>
+    <script>
+      (function () {
+        var link = document.getElementById("open-supervisor");
+        if (window.RELAY_SUPERVISOR_URL) {
+          link.href = window.RELAY_SUPERVISOR_URL;
+        }
+      })();
+    </script>
+  </body>
+</html>

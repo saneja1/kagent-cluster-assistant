@@ -1,0 +1,24 @@
+# Private build notes — do not publish
+myREADME.md
+
+# Local / OS noise
+.DS_Store
+*.swp
+*~
+
+# Secrets — never commit
+.env
+.env.*
+*.pem
+*api*key*
+*secret*
+
+# Kind / local binaries accidentally left in folder
+kind
+kind-*
+kind01
+
+# Python
+__pycache__/
+*.pyc
+.venv/
